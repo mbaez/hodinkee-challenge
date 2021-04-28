@@ -1,0 +1,33 @@
+.control {
+  &.has-icons-left {
+    .icon.is-small {
+      font-size: 0.75rem;
+    }
+    .fa-asterisk {
+      color: $danger;
+    }
+    .textarea {
+      padding-left: 2.5em !important;
+    }
+  }
+}
+
+.has-image {
+  text-align: center;
+  img {
+    max-height: 273px;
+  }
+  .img-empty {
+    height: 273px;
+    padding-top: 130px;
+    border: 1px solid $pane-gray-border;
+  }
+}
+
+.box {
+  hr {
+    border: 1px solid whitesmoke;
+    border-top-color: $pane-gray-border;
+    border-bottom-color: white;
+  }
+}

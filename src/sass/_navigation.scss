@@ -1,0 +1,46 @@
+.navbar-item img {
+  max-height: 1.2rem;
+}
+
+.navbar {
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.06);
+}
+
+.post {
+  margin-top: 2rem;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.06);
+
+  &:first-child {
+    border-top: 0px solid;
+  }
+  .post-content {
+    h2 {
+      font-size: $size-3;
+      color: black;
+      margin-bottom: 1.5rem;
+      font-family: "Ubuntu", sans-serif;
+    }
+    p {
+      font-size: $size-6;
+      font-family: "Roboto Mono", monospace;
+      margin-bottom: 1.1rem;
+      color: $text-gray;
+    }
+  }
+  .post-footer {
+    b {
+      text-transform: uppercase;
+    }
+    span {
+      font-style: italic;
+      font-size: 0.6875em;
+    }
+  }
+}
+
+.loading {
+  //@extend .box;
+  text-align: center;
+  font-size: 1.3rem;
+}
