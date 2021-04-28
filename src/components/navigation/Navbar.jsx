@@ -32,13 +32,17 @@ export default function Navbar() {
           <Link to="/posts" className="navbar-item">
             Latest Posts
           </Link>
-          <Link to="/posts" className="navbar-item">
+          <Link to="/posts/local" className="navbar-item">
             Local Posts
           </Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <div className="buttons">&nbsp;</div>
+            <div className="buttons">
+              <Link to="/admin/posts" className="navbar-item">
+                Admin Local Posts
+              </Link>
+            </div>
           </div>
         </div>
       </div>

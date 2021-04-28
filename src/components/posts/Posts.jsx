@@ -32,7 +32,6 @@ export default function Posts() {
 
   return (
     <>
-      <Error />
       {!isLoading &&
         !error &&
         data.pages.map((el) => {

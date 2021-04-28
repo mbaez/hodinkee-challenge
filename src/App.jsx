@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Navbar from "./components/navigation/Navbar";
 import "./sass/App.scss";
 import "@fortawesome/fontawesome-free/js/all";
+import LocalPosts from "./components/posts/LocalPosts";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +16,9 @@ function App() {
       <Navbar />
       <QueryClientProvider client={queryClient}>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/posts" component={LocalPostList} />
-          <Route exact path="/posts/new" component={LocalPostList} />
+          <Route exact path="/posts" component={Home} />
+          <Route exact path="/posts/local" component={LocalPosts} />
+          <Route exact path="/admin/posts" component={LocalPostList} />
         </Switch>
       </QueryClientProvider>
     </Router>
