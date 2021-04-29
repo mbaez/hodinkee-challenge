@@ -3,16 +3,19 @@ import {
   Breadcrumb,
   Content,
   Description,
+  Message,
   Panel,
   Wizard,
 } from '../commons/Layout';
 import Loading from '../commons/Loading';
+import NoData from '../commons/NoData';
 import Page from '../navigation/Page';
 import Post from '../posts/Post';
 import LocalPostForm from './LocalPostForm';
 
 export default function LocalPostList() {
   const [data, setData] = useState([]);
+  const [refresh, setRefresh] = useState(0);
 
   const getLocalPosts = () => {
     const item = sessionStorage.getItem('posts');
@@ -26,6 +29,7 @@ export default function LocalPostList() {
   const persistLocalPosts = (dataArray) => {
     const jsonStr = JSON.stringify(dataArray);
     sessionStorage.setItem('posts', jsonStr);
+    setRefresh(refresh + 1);
   };
 
   const onSaveData = (value, index) => {
@@ -56,6 +60,19 @@ export default function LocalPostList() {
           List of local posts stored in browser storage. Be careful because the
           localstorage has a size limit of 10MB.
         </Description>
+        {refresh !== 0 && (
+          <Message type="success">
+            <i className="fas fa-smile-beam" />
+            <button
+              className="delete"
+              type="button"
+              onClick={(evt) => setRefresh(0)}
+            >
+              &nbsp;
+            </button>
+            &nbsp;The operation has been successfully completed
+          </Message>
+        )}
         {data.map((item, index) => {
           return (
             <Content>
@@ -77,6 +94,7 @@ export default function LocalPostList() {
             </Content>
           );
         })}
+        {data.length === 0 && <NoData />}
         <Content>
           <button
             type="button"
