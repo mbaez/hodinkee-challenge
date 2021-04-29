@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   Breadcrumb,
   Content,
   Description,
   Panel,
   Wizard,
-} from "../commons/Layout";
-import Loading from "../commons/Loading";
-import Page from "../navigation/Page";
-import Post from "../posts/Post";
-import LocalPostForm from "./LocalPostForm";
+} from '../commons/Layout';
+import Loading from '../commons/Loading';
+import Page from '../navigation/Page';
+import Post from '../posts/Post';
+import LocalPostForm from './LocalPostForm';
 
 export default function LocalPostList() {
   const [data, setData] = useState([]);
 
   const getLocalPosts = () => {
-    const item = sessionStorage.getItem("posts");
+    const item = sessionStorage.getItem('posts');
     return item ? JSON.parse(item) : [];
   };
 
@@ -25,7 +25,7 @@ export default function LocalPostList() {
 
   const persistLocalPosts = (dataArray) => {
     const jsonStr = JSON.stringify(dataArray);
-    sessionStorage.setItem("posts", jsonStr);
+    sessionStorage.setItem('posts', jsonStr);
   };
 
   const onSaveData = (value, index) => {

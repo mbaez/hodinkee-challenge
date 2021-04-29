@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useInfiniteQuery } from "react-query";
-import useInfiniteScroll from "react-infinite-scroll-hook";
-import Post from "./Post";
-import Loading from "../commons/Loading";
-import { getPosts } from "../../api/post-api";
-import Error from "../commons/Error";
+import React, { useState } from 'react';
+import { useInfiniteQuery } from 'react-query';
+import useInfiniteScroll from 'react-infinite-scroll-hook';
+import Post from './Post';
+import Loading from '../commons/Loading';
+import { getPosts } from '../../api/post-api';
+import Error from '../commons/Error';
 
 /**
  *
@@ -17,7 +17,7 @@ export default function Posts() {
     fetchNextPage,
     hasNextPage,
     isLoading,
-  } = useInfiniteQuery("posts", getPosts, {
+  } = useInfiniteQuery('posts', getPosts, {
     getNextPageParam: (lastPage, pages) => {
       return lastPage.page < lastPage.pageTotal ? lastPage.page + 1 : undefined;
     },

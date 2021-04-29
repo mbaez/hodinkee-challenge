@@ -1,6 +1,6 @@
-import React from "react";
-import Page from "./navigation/Page";
-import Posts from "./posts/Posts";
+import React from 'react';
+import Page from './navigation/Page';
+import Posts from './posts/Posts';
 
 /**
  * Componente secundario que recibe los parametros del componente

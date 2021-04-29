@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import Post from "./Post";
-import Page from "../navigation/Page";
+import React, { useEffect, useState } from 'react';
+import Post from './Post';
+import Page from '../navigation/Page';
 /**
  *
  * @param {*} param
@@ -9,7 +9,7 @@ export default function LocalPosts() {
   const [data, setData] = useState([]);
 
   const getLocalPosts = () => {
-    const item = sessionStorage.getItem("posts");
+    const item = sessionStorage.getItem('posts');
     return item ? JSON.parse(item) : [];
   };
 

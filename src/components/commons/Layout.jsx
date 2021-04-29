@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 /**
  * Componente que representa el formulario de alta y modificación de un
  * recurso.
@@ -34,13 +34,12 @@ export function Wizard({ children }) {
 export function Breadcrumb({ children, badge, active, to }) {
   const content = (
     <>
-      {" "}
-      {children}&nbsp;
+      {children} &nbsp;
       <span className="badge">{badge}</span>
     </>
   );
   return (
-    <li className={active ? "active" : ""}>
+    <li className={active ? 'active' : ''}>
       {to && <Link to={to}>{content} </Link>}
       {!to && <span>{content}</span>}
     </li>

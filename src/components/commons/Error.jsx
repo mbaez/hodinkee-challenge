@@ -1,5 +1,5 @@
-import React from "react";
-import { Message } from "./Layout";
+import React from 'react';
+import { Message } from './Layout';
 /**
  * @param {*} param
  */

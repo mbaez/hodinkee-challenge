@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export default function TextField(props) {
   const { title, error, type } = props;
-  const errorClazz = error ? "is-danger" : "";
+  const errorClazz = error ? 'is-danger' : '';
   return (
     <div className="field ">
       <p className="label is-small">{title}</p>
@@ -10,10 +10,10 @@ export default function TextField(props) {
         <span className="icon is-small is-left">
           <i className="fas fa-asterisk " />
         </span>
-        {type !== "textarea" && (
+        {type !== 'textarea' && (
           <input className={`input is-small ${errorClazz}`} {...props} />
         )}
-        {type === "textarea" && (
+        {type === 'textarea' && (
           <textarea className={`textarea is-small ${errorClazz}`} {...props} />
         )}
       </div>

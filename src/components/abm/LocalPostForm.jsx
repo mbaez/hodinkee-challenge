@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { confirmAlert } from "react-confirm-alert";
-import Post from "../posts/Post";
-import TextField from "../commons/TextField";
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { confirmAlert } from 'react-confirm-alert';
+import Post from '../posts/Post';
+import TextField from '../commons/TextField';
 
 export default function LocalPostForm({
   title,
@@ -15,7 +15,7 @@ export default function LocalPostForm({
   onRemove,
 }) {
   const [fileField, setFileField] = useState(urlToImage);
-  const [fileName, setFileName] = useState("Select a image");
+  const [fileName, setFileName] = useState('Select a image');
   const {
     register,
     handleSubmit,
@@ -34,21 +34,21 @@ export default function LocalPostForm({
     const formData = {
       ...data,
       urlToImage: fileField,
-      author: "WEB",
+      author: 'WEB',
       publishedAt: now.toISOString(),
     };
     confirmAlert({
-      title: "Confirm to submit",
-      message: "Are you sure to do this.",
+      title: 'Confirm to submit',
+      message: 'Are you sure to do this.',
       buttons: [
         {
-          label: "Yes",
+          label: 'Yes',
           onClick: () => {
             onSave(formData);
           },
         },
         {
-          label: "No",
+          label: 'No',
           onClick: () => {},
         },
       ],
@@ -57,15 +57,15 @@ export default function LocalPostForm({
 
   const handleRemove = () => {
     confirmAlert({
-      title: "Confirm to remove",
-      message: "Are you sure to remove this post?.",
+      title: 'Confirm to remove',
+      message: 'Are you sure to remove this post?.',
       buttons: [
         {
-          label: "Yes",
+          label: 'Yes',
           onClick: () => onRemove(),
         },
         {
-          label: "No",
+          label: 'No',
           onClick: () => {},
         },
       ],
@@ -113,8 +113,8 @@ export default function LocalPostForm({
           <TextField
             title="Title"
             defaultValue={title}
-            {...register("title", { required: true })}
-            onChange={(evt) => setValue("title", evt.target.value)}
+            {...register('title', { required: true })}
+            onChange={(evt) => setValue('title', evt.target.value)}
             error={errors.title}
           />
           <TextField
@@ -122,9 +122,9 @@ export default function LocalPostForm({
             error={errors.description}
             type="textarea"
             defaultValue={description}
-            {...register("description", { required: true })}
+            {...register('description', { required: true })}
             onChange={(evt) => {
-              setValue("description", evt.target.value);
+              setValue('description', evt.target.value);
             }}
           />
           <TextField
@@ -132,8 +132,8 @@ export default function LocalPostForm({
             error={errors.content}
             type="textarea"
             defaultValue={content}
-            {...register("content", { required: true })}
-            onChange={(evt) => setValue("content", evt.target.value)}
+            {...register('content', { required: true })}
+            onChange={(evt) => setValue('content', evt.target.value)}
           />
         </div>
         <div className="column has-image">
@@ -145,7 +145,7 @@ export default function LocalPostForm({
                 type="file"
                 accept="image/*"
                 className="file-input"
-                {...register("urlToImage", { required: false })}
+                {...register('urlToImage', { required: false })}
                 onChange={imageUpload}
               />
               <span className="file-cta">
