@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { confirmAlert } from 'react-confirm-alert';
-import Post from '../posts/Post';
 import TextField from '../commons/TextField';
 
 export default function LocalPostForm({
   title,
   description,
-  author,
   content,
-  publishedAt,
   urlToImage,
   onSave,
   onRemove,
@@ -19,9 +16,7 @@ export default function LocalPostForm({
   const {
     register,
     handleSubmit,
-    reset,
     setValue,
-    watch,
     formState: { errors },
   } = useForm({ defaultValues: { title, description, content } });
 

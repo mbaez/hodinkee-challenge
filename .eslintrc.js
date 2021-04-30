@@ -20,7 +20,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'warn',
     'operator-linebreak': 'off',
     'comma-dangle': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
     'react/jsx-props-no-spreading': 'warn',
     'jsx-a11y/label-has-associated-control': 'off',
   },

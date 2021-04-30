@@ -7,7 +7,6 @@ import React from 'react';
 export default function Post({
   title,
   description,
-  content,
   author,
   publishedAt,
   urlToImage,

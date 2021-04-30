@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useInfiniteQuery } from 'react-query';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 import Post from './Post';
@@ -18,7 +18,7 @@ export default function Posts() {
     hasNextPage,
     isLoading,
   } = useInfiniteQuery('posts', getPosts, {
-    getNextPageParam: (lastPage, pages) => {
+    getNextPageParam: (lastPage) => {
       return lastPage.page < lastPage.pageTotal ? lastPage.page + 1 : undefined;
     },
   });

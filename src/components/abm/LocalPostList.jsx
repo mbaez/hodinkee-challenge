@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Breadcrumb,
-  Content,
-  Description,
-  Message,
-  Panel,
-  Wizard,
-} from '../commons/Layout';
-import Loading from '../commons/Loading';
+import { Content, Description, Message, Panel } from '../commons/Layout';
 import NoData from '../commons/NoData';
 import Page from '../navigation/Page';
-import Post from '../posts/Post';
 import LocalPostForm from './LocalPostForm';
 
 export default function LocalPostList() {
@@ -34,7 +25,6 @@ export default function LocalPostList() {
 
   const onSaveData = (value, index) => {
     const newData = [...data];
-    console.log(newData);
     newData[index] = value;
     persistLocalPosts(newData);
     setData(newData);
@@ -66,7 +56,7 @@ export default function LocalPostList() {
             <button
               className="delete"
               type="button"
-              onClick={(evt) => setRefresh(0)}
+              onClick={() => setRefresh(0)}
             >
               &nbsp;
             </button>
